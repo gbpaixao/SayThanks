@@ -1,25 +1,35 @@
-# NLW Together
+# SayThanks
 
-## Regras
+SayThanks é uma Rest API de troca de elogios entre colaboradores de um projeto.
 
-- Cadastro de usuário
+Foi desenvolvido utilizando como base a trilha Node.js da Next Level Week - Together produzida pela Rocketseat em Julho de 2021.
 
-  [ x ] Não é permitido cadastrar mais de um usário com o mesmo email
+## Instalação
 
-  [ x ] Não é permitido cadastrar usuário sem email
+Você deve fazer um fork neste repositório, clonar na sua máquina local e acessar a pasta.
 
-- Cadastro de tags
+Para baixar as dependências utilize:
 
-  [ x ] Não é permitido cadastrar mais de uma tag com o mesmo nome
+```bash
+  yarn
+```
 
-  [ x ] Não é permitido cadastrar tag sem nome
+Para gerar o banco de dados utilize:
 
-  [ x ] Não é permitido o cadastro por usuário que não sejam admin
+```bash
+  yarn typeorm migration:run
+```
 
-- Cadastro de elogios
+Para rodar o servidor localmente utilize:
 
-  [ ] Não é permitido um usuário cadastrar um elogio para si mesmo
+```bash
+  yarn start
+```
 
-  [ ] Não é permitido cadastrar elogios para usuário inválidos
+## Contribuições
 
-  [ ] Usuário precisa estar autenticado na aplicação
+Pull requests são bem-vindos. Para alterações importantes por favor abrir uma issue com o intuito de discutí-las.
+
+## Licença
+
+[MIT](./LICENSE.md)

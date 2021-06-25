@@ -9,6 +9,7 @@ class ListSentComplimentsService {
       where: {
         user_sender: user_id,
       },
+      relations: ['userSender', 'userReceiver', 'tagId'],
     });
 
     return compliments;

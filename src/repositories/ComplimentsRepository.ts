@@ -2,6 +2,6 @@ import { EntityRepository, Repository } from 'typeorm';
 import { Compliment } from '../entities/Compliment';
 
 @EntityRepository(Compliment)
-class ComplimentsRepositories extends Repository<Compliment> {}
+class ComplimentsRepository extends Repository<Compliment> {}
 
-export { ComplimentsRepositories };
+export { ComplimentsRepository };

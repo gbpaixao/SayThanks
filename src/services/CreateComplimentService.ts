@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
-import { ComplimentsRepositories } from '../repositories/ComplimentsRepositories';
-import { UsersRepositories } from '../repositories/UsersRepositories';
+import { ComplimentsRepository } from '../repositories/ComplimentsRepository';
+import { UsersRepository } from '../repositories/UsersRepository';
 
 interface IComplimentRequest {
   tag_id: string;
@@ -11,27 +11,27 @@ interface IComplimentRequest {
 
 class CreateComplimentService {
   async execute({ tag_id, user_receiver, user_sender, message }: IComplimentRequest) {
-    const complimentsRepositories = getCustomRepository(ComplimentsRepositories);
-    const usersRepositories = getCustomRepository(UsersRepositories);
+    const complimentsRepository = getCustomRepository(ComplimentsRepository);
+    const usersRepository = getCustomRepository(UsersRepository);
 
     if (user_sender === user_receiver) {
       throw new Error('Self-compliment is not allowed');
     }
 
-    const userReceiverExists = await usersRepositories.findOne(user_receiver);
+    const userReceiverExists = await usersRepository.findOne(user_receiver);
 
     if (!userReceiverExists) {
       throw new Error('Receiver does not exist!');
     }
 
-    const compliment = complimentsRepositories.create({
+    const compliment = complimentsRepository.create({
       tag_id,
       user_receiver,
       user_sender,
       message,
     });
 
-    await complimentsRepositories.save(compliment);
+    await complimentsRepository.save(compliment);
 
     return compliment;
   }

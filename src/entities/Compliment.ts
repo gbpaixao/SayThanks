@@ -10,18 +10,21 @@ class Compliment {
 
   @Column()
   user_sender: string;
-
-  @JoinColumn({ name: 'user_sender' })
   @ManyToOne(() => User)
+  @JoinColumn({ name: 'user_sender' })
   userSender: User;
 
+  @Column()
+  user_receiver: string;
   @ManyToOne(() => User)
   @JoinColumn({ name: 'user_receiver' })
-  user_receiver: User;
+  userReceiver: User;
 
+  @Column()
+  tag_id: string;
   @ManyToOne(() => Tag)
   @JoinColumn({ name: 'tag_id' })
-  tag_id: Tag;
+  tagId: Tag;
 
   @Column()
   message: string;

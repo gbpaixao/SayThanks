@@ -9,10 +9,10 @@ class CreateComplimentController {
     const createComplimentService = new CreateComplimentService();
 
     const compliment = await createComplimentService.execute({
-      message,
+      tag_id,
       user_receiver,
       user_sender,
-      tag_id,
+      message,
     });
 
     return response.json(compliment);

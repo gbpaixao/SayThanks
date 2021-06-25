@@ -30,6 +30,7 @@ class CreateComplimentService {
       user_sender,
       message,
     });
+    // } as unknown as Compliment);
 
     await complimentsRepository.save(compliment);
 

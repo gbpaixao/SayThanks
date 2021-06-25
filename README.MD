@@ -26,6 +26,14 @@ Para rodar o servidor localmente utilize:
   yarn start
 ```
 
+## Próximas features
+
+- Deploy;
+- Frontend;
+- Enviar email quando receber um elogio;
+- Criar erros personalizáveis;
+- Paginação das listas;
+
 ## Contribuições
 
 Pull requests são bem-vindos. Para alterações importantes por favor abrir uma issue com o intuito de discutí-las.

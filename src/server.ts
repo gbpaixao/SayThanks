@@ -1,4 +1,4 @@
-import express, { NextFunction, Request, Response } from 'express';
+import express, { Request, Response } from 'express';
 import 'reflect-metadata';
 import 'express-async-errors';
 import cors from 'cors';
@@ -16,7 +16,7 @@ app.get('/', (req, res) => res.send('Api rodando!'));
 
 app.use(router);
 
-app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
+app.use((err: Error, request: Request, response: Response) => {
   if (err instanceof Error) {
     return response.status(400).json({
       error: err.message,
